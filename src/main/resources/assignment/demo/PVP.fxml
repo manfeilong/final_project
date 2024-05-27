@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <BorderPane prefHeight="540.0" prefWidth="960.0">
+         <top>
+            <HBox prefHeight="25.0" prefWidth="960.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <HBox prefHeight="25.0" prefWidth="960.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <left>
+            <VBox prefHeight="490.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <VBox prefHeight="490.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="490.0" prefWidth="25.0" style="-fx-background-color: #000065;" />
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
