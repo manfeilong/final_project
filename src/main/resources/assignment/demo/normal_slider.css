@@ -1,0 +1,17 @@
+/* 定义滑杆轨道的颜色 */
+.slider .track {
+    -fx-background-color: #ff8c00;
+    -fx-background-insets: 0;
+    -fx-background-radius: 30px;
+    -fx-pref-height: 60px; /* 设置轨道高度 */
+     -fx-pref-width: 5px; /* 滑块宽度 */
+}
+
+
+/* 定义滑块的颜色和大小 */
+.slider .thumb {
+    -fx-background-color: #d2691e;
+    -fx-background-radius: 50px; /* 圆形滑块 */
+    -fx-pref-width: 50px; /* 滑块宽度 */
+    -fx-pref-height: 50px; /* 滑块高度 */
+}

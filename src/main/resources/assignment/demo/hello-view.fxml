@@ -1,96 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url(@../../../../../../../Users/shihy/Downloads/Untitled.png);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../JavaProjects/game/resources/Untitled.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="black" fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../JavaProjects/game/resources/black.png" />
-         </image>
-      </ImageView>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0">
-         <bottom>
-            <VBox prefHeight="218.0" prefWidth="960.0" spacing="20.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" style="-fx-background-radius: 15; -fx-border-radius: 15;">
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-image: url(@../../../../../../../Users/shihy/Downloads/Untitled.png);">
+         <children>
+            <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/yo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black" fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/black.png" />
+               </image>
+            </ImageView>
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0">
+               <bottom>
+                  <VBox prefHeight="218.0" prefWidth="960.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="PVP_button" alignment="CENTER" lineSpacing="5.0" mnemonicParsing="false" onMouseClicked="#on_PVP_button_Click" prefHeight="85.0" prefWidth="140.0" style="-fx-background-color: #6495ed;" text="P V P" textAlignment="CENTER" textFill="WHITE">
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="35.0" style="-fx-background-radius: 15; -fx-border-radius: 15;">
+                           <children>
+                              <Button fx:id="PVP_button" alignment="CENTER" lineSpacing="5.0" mnemonicParsing="false" onMouseClicked="#on_PVP_button_Click" prefHeight="85.0" prefWidth="140.0" style="-fx-background-color: #6495ed;" text="P V P" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="25.37" radius="9.27" width="13.71" />
+                                 </effect>
+                              </Button>
+                              <Button fx:id="PVE_button" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#on_PVE_button_Click" prefHeight="85.0" prefWidth="140.0" style="-fx-background-color: #6495ed;" text="P V E" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="25.37" radius="9.27" width="13.71" />
+                                 </effect>
+                              </Button>
+                              <Button fx:id="training_button" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#on_training_button_Click" prefHeight="85.0" prefWidth="140.0" style="-fx-background-color: #6495ed;" text="TRAINING GROUNDS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="25.37" radius="9.27" width="13.71" />
+                                 </effect>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="85.0" prefWidth="960.0">
+                           <children>
+                              <StackPane prefHeight="110.0" prefWidth="684.0">
+                                 <children>
+                                    <ImageView fitHeight="91.0" fitWidth="153.0" onMouseClicked="#on_super_mode_Click" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/super_mode.gif" />
+                                       </image>
+                                    </ImageView>
+                                    <Label onMouseClicked="#on_super_mode_Click" text="地獄魔王級模式" textFill="WHITE">
+                                       <font>
+                                          <Font name="Microsoft YaHei Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </bottom>
+               <top>
+                  <HBox alignment="CENTER" prefHeight="83.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="77.0" prefWidth="80.0" />
+                        <Label alignment="CENTER" graphicTextGap="10.0" prefHeight="69.0" prefWidth="787.0" text="蹦蹦炸彈" textAlignment="CENTER" textFill="#fffe96" wrapText="true">
                            <font>
-                              <Font name="System Bold" size="25.0" />
+                              <Font name="System Bold" size="36.0" />
                            </font>
-                           <effect>
-                              <DropShadow height="25.37" radius="9.27" width="13.71" />
-                           </effect>
-                        </Button>
-                        <Button fx:id="PVE_button" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#on_PVE_button_Click" prefHeight="85.0" prefWidth="140.0" style="-fx-background-color: #6495ed;" text="P V E" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="25.0" />
-                           </font>
-                           <effect>
-                              <DropShadow height="25.37" radius="9.27" width="13.71" />
-                           </effect>
-                        </Button>
-                        <Button fx:id="training_button" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#on_training_button_Click" prefHeight="85.0" prefWidth="140.0" style="-fx-background-color: #6495ed;" text="TRAINING GROUNDS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                           <effect>
-                              <DropShadow height="25.37" radius="9.27" width="13.71" />
-                           </effect>
-                        </Button>
+                        </Label>
+                        <ImageView fx:id="setting_icon" fitHeight="85.0" fitWidth="85.0" onMouseClicked="#on_setting_image_Click" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/設定.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="25.0" top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="85.0" prefWidth="960.0">
-                     <children>
-                        <Button fx:id="custom_button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="188.0" style="-fx-background-color: #d2691e;" text="CUSTOM" textAlignment="CENTER" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="25.0" />
-                           </font>
-                           <effect>
-                              <DropShadow height="25.37" radius="9.27" width="13.71" />
-                           </effect>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </bottom>
-         <top>
-            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+               </top>
+            </BorderPane>
+            <Group>
                <children>
-                  <VBox prefHeight="77.0" prefWidth="80.0" />
-                  <Label alignment="CENTER" graphicTextGap="10.0" prefHeight="69.0" prefWidth="787.0" text="蹦蹦炸彈" textAlignment="CENTER" textFill="#ff9696" wrapText="true">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="setting_icon" fitHeight="85.0" fitWidth="85.0" onMouseClicked="#on_setting_image_Click" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="PVP_introduce" fitHeight="525.0" fitWidth="899.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
-                        <Image url="@../../images/設定.png" />
+                        <Image url="@../../images/introduce.jpg" />
                      </image>
-                     <HBox.margin>
-                        <Insets right="25.0" top="20.0" />
-                     </HBox.margin>
                   </ImageView>
+                  <ImageView fx:id="PVE_guide" fitHeight="525.0" fitWidth="899.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../images/PVE_guide.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="training_guide" fitHeight="525.0" fitWidth="899.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../images/training_guide.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="OK_into_PVP" layoutX="521.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#on_OK_into_PVP" prefHeight="59.0" prefWidth="96.0" style="-fx-background-color: #8fbc8f;" text="OK" visible="false">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="OK_into_PVE" layoutX="521.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#on_OK_into_PVE" prefHeight="59.0" prefWidth="96.0" style="-fx-background-color: #8fbc8f;" text="OK" visible="false">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="OK_into_training" layoutX="531.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#on_OK_into_training" prefHeight="59.0" prefWidth="96.0" style="-fx-background-color: #8fbc8f;" text="OK" visible="false">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Button>
                </children>
-            </HBox>
-         </top>
-      </BorderPane>
+            </Group>
+         </children>
+      </StackPane>
+      <ImageView fx:id="interface_image" fitHeight="540.0" fitWidth="960.0" onMouseClicked="#on_interface_image_click" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/interface_background.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="interface_label" layoutX="307.0" layoutY="243.0" onMouseClicked="#on_interface_image_click" prefHeight="31.0" prefWidth="346.0" text="點擊畫面進入蹦蹦炸彈的世界" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
    </children>
-</StackPane>
+</AnchorPane>

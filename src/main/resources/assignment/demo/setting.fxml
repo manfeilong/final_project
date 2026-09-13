@@ -12,11 +12,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane style="-fx-background-color: #696969;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
+<StackPane style="-fx-background-color: #696969;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
    <children>
+      <ImageView fx:id="setting_background_icon" fitHeight="540.0" fitWidth="960.0" opacity="0.27" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/pexels-pixabay-220182.jpg" />
+         </image>
+      </ImageView>
       <ImageView fx:id="black_setting" fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/setting_back.jpeg" />
+            <Image url="@../../images/black.png" />
          </image>
       </ImageView>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0">
@@ -25,7 +30,7 @@
                <children>
                   <ImageView fx:id="back_setting_icon" fitHeight="85.0" fitWidth="87.0" onMouseClicked="#on_setting_image_Click_back" pickOnBounds="true" preserveRatio="true" x="2.0" y="2.0">
                      <image>
-                        <Image url="@../../images/設定.png" />
+                        <Image url="@../../images/return.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="25.0" top="20.0" />
@@ -41,12 +46,12 @@
                      <children>
                         <StackPane>
                            <children>
-                              <ImageView fx:id="music_icon" fitHeight="93.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                              <ImageView fx:id="music_icon" fitHeight="93.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/音量.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="mute_music" fitHeight="108.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="mute_music" fitHeight="108.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                  <image>
                                     <Image url="@../../images/靜音.png" />
                                  </image>
@@ -58,12 +63,12 @@
                         </StackPane>
                         <StackPane prefHeight="78.0" prefWidth="150.0">
                            <children>
-                              <ImageView fx:id="background_icon" fitHeight="104.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                              <ImageView fx:id="background_icon" fitHeight="104.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/音量.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="mute_background" fitHeight="104.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="mute_background" fitHeight="104.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                  <image>
                                     <Image url="@../../images/靜音.png" />
                                  </image>
@@ -83,12 +88,12 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="440.0" prefWidth="143.0" spacing="50.0">
                      <children>
-                        <Label prefHeight="59.0" prefWidth="102.0" text="music volume" textAlignment="CENTER" wrapText="true">
+                        <Label prefHeight="59.0" prefWidth="102.0" text="music volume" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
                         </Label>
-                        <Label prefHeight="86.0" prefWidth="148.0" text="background volume" textAlignment="CENTER" wrapText="true">
+                        <Label prefHeight="86.0" prefWidth="148.0" text="background volume" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -97,8 +102,8 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="512.0" spacing="100.0" stylesheets="@slider_style.css">
                      <children>
-                        <Slider fx:id="music_volumeSlider" onMouseDragged="#volume_music" />
-                        <Slider fx:id="background_volumeSlider" onMouseDragged="#volume_background" />
+                        <Slider fx:id="music_volumeSlider" onMouseDragged="#volume_music" snapToTicks="true" value="50.0" />
+                        <Slider fx:id="background_volumeSlider" onMouseDragged="#volume_background" snapToTicks="true" value="50.0" />
                      </children>
                      <HBox.margin>
                         <Insets top="20.0" />
@@ -106,12 +111,12 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
                      <children>
-                        <Label fx:id="music_label" alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="87.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="music_label" alignment="CENTER" contentDisplay="CENTER" prefHeight="71.0" prefWidth="87.0" text="50" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="35.0" />
                            </font>
                         </Label>
-                        <Label fx:id="background_label" alignment="CENTER" contentDisplay="CENTER" lineSpacing="5.0" prefHeight="71.0" prefWidth="87.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                        <Label fx:id="background_label" alignment="CENTER" contentDisplay="CENTER" lineSpacing="5.0" prefHeight="71.0" prefWidth="87.0" text="50" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="35.0" />
                            </font>
@@ -125,7 +130,7 @@
             </HBox>
          </center>
          <bottom>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="190.0" prefWidth="511.0" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
+            <HBox alignment="BOTTOM_CENTER" prefHeight="120.0" prefWidth="511.0" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
                <children>
                   <ImageView fitHeight="86.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -134,17 +139,17 @@
                   </ImageView>
                   <Group>
                      <children>
-                        <ImageView fitHeight="85.0" fitWidth="98.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="left_choose_music" fitHeight="85.0" fitWidth="98.0" layoutY="10.0" onMouseClicked="#left_choose" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/調音量左.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="100.0" prefHeight="95.0" prefWidth="316.0" text="music_name" wrapText="true">
+                        <Label fx:id="music_name" alignment="CENTER" layoutX="100.0" prefHeight="95.0" prefWidth="316.0" text="cruising-down" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="System Bold" size="39.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="85.0" fitWidth="98.0" layoutX="431.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="right_choose_music" fitHeight="85.0" fitWidth="98.0" layoutX="431.0" layoutY="10.0" onMouseClicked="#right_choose" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/調音量右.png" />
                            </image>

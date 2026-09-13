@@ -1,11 +1,15 @@
 .slider {
     -fx-background-color: transparent;
+    //color blue
+    -fx-text-fill: #ff4500;
 }
 
 .slider .track {
     -fx-background-color: linear-gradient(to right, #ff7f50, #ff4500);
     -fx-background-radius: 10;
     -fx-padding: 4 0 4 0;
+    //color blue
+    -fx-text-fill: #ff4500;
 }
 
 .slider .thumb {

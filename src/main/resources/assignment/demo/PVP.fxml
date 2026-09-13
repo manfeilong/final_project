@@ -1,37 +1,347 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
+<AnchorPane fx:id="PVP_pane" focusTraversable="true" onKeyPressed="#handleKeyPress_PVP" onKeyReleased="#handleKeyRelease_PVP" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <children>
-      <BorderPane prefHeight="540.0" prefWidth="960.0">
-         <top>
-            <HBox prefHeight="25.0" prefWidth="960.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
-         </top>
-         <bottom>
-            <HBox prefHeight="25.0" prefWidth="960.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
-         </bottom>
-         <left>
-            <VBox prefHeight="490.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
-         </left>
-         <right>
-            <VBox prefHeight="490.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
-         </right>
+      <StackPane alignment="BOTTOM_CENTER" layoutX="462.0" layoutY="3.0" prefHeight="534.0" prefWidth="494.0">
+         <children>
+            <ImageView fitHeight="522.0" fitWidth="465.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/PVP_background.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane alignment="BOTTOM_CENTER" prefHeight="540.0" prefWidth="474.0">
+         <children>
+            <ImageView fitHeight="525.0" fitWidth="472.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/PVP_background.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <BorderPane prefHeight="540.0" prefWidth="480.0">
          <center>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="490.0" prefWidth="25.0" style="-fx-background-color: #000065;" />
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="player_1_normal" fitHeight="335.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/player1_normal.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="player_1_get_hurt" fitHeight="335.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/player1_gethurt.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
                </children>
             </HBox>
          </center>
+         <top>
+            <VBox fx:id="player1_up_bar" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <VBox fx:id="player1_down_bar" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <left>
+            <HBox fx:id="player1_left_bar" prefHeight="100.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <HBox fx:id="player1_right_bar" prefHeight="100.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </right>
       </BorderPane>
+      <BorderPane layoutX="480.0" prefHeight="540.0" prefWidth="480.0">
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane>
+                     <children>
+                        <ImageView fx:id="player_2_normal" fitHeight="335.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/player1_normal.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="player_2_get_hurt" fitHeight="335.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/player1_gethurt.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </center>
+         <top>
+            <VBox fx:id="player2_up_bar" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <VBox fx:id="player2_down_bar" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <left>
+            <HBox fx:id="player2_left_bar" prefHeight="100.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <HBox fx:id="player2_right_bar" prefHeight="100.0" prefWidth="25.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <StackPane fx:id="player_1_HP" layoutX="75.0" layoutY="25.0" prefHeight="20.0" prefWidth="380.0" style="-fx-background-color: #CE0000;" />
+      <StackPane fx:id="player_2_HP" layoutX="555.0" layoutY="25.0" prefHeight="20.0" prefWidth="380.0" style="-fx-background-color: #CE0000;" />
+      <StackPane layoutX="190.0" layoutY="60.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_1_up_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_up_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_up_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="670.0" layoutY="60.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_2_up_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_up_warning" fitHeight="70.0" fitWidth="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_up_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="190.0" layoutY="420.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_1_down_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_down_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_down_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="670.0" layoutY="421.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_2_down_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_down_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_down_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="50.0" layoutY="250.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_1_left_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_left_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_left_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="530.0" layoutY="250.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_2_left_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_left_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_left_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="330.0" layoutY="250.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_1_right_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_right_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_right_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="810.0" layoutY="250.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="player_2_right_bomb" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/bomb.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_right_warning" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/警示.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_right_explode" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/booooomb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <ImageView fx:id="back_PVP_icon" fitHeight="87.0" fitWidth="50.0" layoutX="880.0" layoutY="50.0" onMouseClicked="#on_PVP_image_Click_back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/return.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="40.0" layoutY="25.0" prefHeight="23.0" prefWidth="28.0" text="HP">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="25.0" prefHeight="23.0" prefWidth="28.0" text="HP">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Circle fx:id="player_1_CD" fill="#00ff1a" layoutX="50.0" layoutY="70.0" radius="10.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="player_2_CD" fill="#00ff1a" layoutX="530.0" layoutY="70.0" radius="10.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
+      <StackPane alignment="BOTTOM_CENTER" layoutX="25.0" layoutY="170.0" prefHeight="235.0" prefWidth="430.0">
+         <children>
+            <ImageView fx:id="player_1_W_or_L_background" fitHeight="242.0" fitWidth="467.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/black.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_loss" fitHeight="254.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/lose.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_1_win" fitHeight="254.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/win.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane alignment="BOTTOM_CENTER" layoutX="505.0" layoutY="161.0" prefHeight="264.0" prefWidth="431.0">
+         <children>
+            <ImageView fx:id="player_2_W_or_L_background" fitHeight="242.0" fitWidth="467.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/black.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_loss" fitHeight="254.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/lose.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player_2_win" fitHeight="254.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../images/win.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="397.0" layoutY="300.0" prefHeight="129.0" prefWidth="169.0">
+         <children>
+            <Button fx:id="PVP_result_back_button" mnemonicParsing="false" onMouseClicked="#on_PVP_result_back" prefHeight="81.0" prefWidth="108.0" text="BACK" visible="false">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="0.27" contrast="0.56" hue="-0.06">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <ColorAdjust />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant>
+                                 <color>
+                                    <Color red="0.3760964870452881" green="0.829203188419342" blue="0.9671052694320679" />
+                                 </color>
+                              </Light.Distant>
+                           </light>
+                        </Lighting>
+                     </input>
+                  </ColorAdjust>
+               </effect></Button>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

@@ -10,6 +10,8 @@ module assignment.demo {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
+    requires javafx.media;
 
     opens assignment.demo to javafx.fxml;
     exports assignment.demo;

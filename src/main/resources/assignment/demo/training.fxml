@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane layoutX="-10.0" layoutY="-10.0" maxHeight="-Infinity" maxWidth="-Infinity" onKeyPressed="#handleKeyPress_PVE" onKeyReleased="#handleKeyRelease_PVE" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment.demo.HelloController">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="900.0" layoutX="40.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/training_background.png" />
+         </image>
+      </ImageView>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="540.0" prefWidth="960.0">
+         <top>
+            <VBox fx:id="PVE_UP_LINE" prefHeight="30.0" prefWidth="540.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </top>
+         <left>
+            <HBox fx:id="PVE_LEFT_LINE" prefHeight="480.0" prefWidth="30.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <HBox fx:id="PVE_RIGHT_LINE" prefHeight="480.0" prefWidth="30.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="75.0" prefWidth="75.0">
+                     <children>
+                        <ImageView fx:id="PVE_UP_BOMB" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/bomb.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="PVE_UP_WARNING" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/警示.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="PVE_UP_EXPLODE" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/booooomb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane>
+                           <HBox.margin>
+                              <Insets left="150.0" />
+                           </HBox.margin>
+                           <children>
+                              <ImageView fx:id="PVE_LEFT_BOMB" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../images/bomb.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="PVE_LEFT_WARNING" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../images/警示.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="PVE_LEFT_EXPLODE" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../images/booooomb.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane>
+                           <HBox.margin>
+                              <Insets left="125.0" />
+                           </HBox.margin>
+                           <children>
+                              <ImageView fx:id="PVE_normal" fitHeight="300.0" fitWidth="225.5" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/player1_normal.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="PVE_get_hurt" fitHeight="300.0" fitWidth="225.5" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/player1_gethurt.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <StackPane>
+                           <HBox.margin>
+                              <Insets left="125.0" />
+                           </HBox.margin>
+                           <children>
+                              <ImageView fx:id="PVE_RIGHT_BOMB" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../images/bomb.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="PVE_RIGHT_WARNING" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../images/警示.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="PVE_RIGHT_EXPLODE" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../../images/booooomb.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+                  <StackPane>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="PVE_DOWN_BOMB" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/bomb.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="PVE_DOWN_WARNING" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/警示.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="PVE_DOWN_EXPLODE" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../images/booooomb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox fx:id="PVE_DOWN_LINE" prefHeight="30.0" prefWidth="540.0" style="-fx-background-color: #000065;" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+      <Circle fx:id="PVE_CD" fill="#00ff1a" layoutX="70.0" layoutY="70.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <VBox layoutX="750.0" layoutY="40.0" opacity="0.85" prefHeight="150.0" prefWidth="120.0" spacing="30.0" style="-fx-background-color: #FFD306;">
+         <children>
+            <Label text="遊戲時間 :">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <Label text="防守成功率：">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label text="每5秒進攻次數：">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_RIGHT" layoutX="870.0" layoutY="40.0" opacity="0.85" prefHeight="150.0" prefWidth="70.0" spacing="30.0" style="-fx-background-color: #FFD306;">
+         <children>
+            <Label fx:id="defend_time" text="0秒">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="defend_percentage" text="0%">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="attack_times" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="0次">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Pane fx:id="PVE_player_HP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" prefHeight="200.0" prefWidth="10.0" visible="false" />
+      <Pane fx:id="PVE_BOT_HP" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="10.0" prefHeight="200.0" prefWidth="10.0" visible="false" />
+      <ImageView fx:id="back_training_icon" fitHeight="87.0" fitWidth="50.0" layoutX="890.0" layoutY="190.0" onMouseClicked="#on_Training_image_Click_back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/return.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
